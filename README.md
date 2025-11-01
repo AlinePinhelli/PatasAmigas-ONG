@@ -37,11 +37,11 @@ Para visualizar a estrutura da Entrega I, basta clonar este repositório e abrir
 
 1.  **Clone o repositório:**
     ```bash
-    git clone (https://github.com/AlinePinhelli/PatasAmigas-ONG)
+    git clone https://github.com/AlinePinhelli/PatasAmigas-ONG
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd [patasAmigas-ONG]
+    cd patasAmigas-ONG
     ```
 3.  **Abra os arquivos:**
     * Clique duas vezes em `index.html` ou arraste-o para a aba do seu navegador (Chrome, Firefox, etc.).
