@@ -1,19 +1,20 @@
 /*
  * -----------------------------------------------------
  * ARQUIVO: assets/css/style.css
- * ENTREGA II: CSS AVANÇADO, BEM E RESPONSIVIDADE
+ * ENTREGA II: CSS AVANÇADO, BEM, RESPONSIVIDADE E DESIGN SYSTEM
  * -----------------------------------------------------
  */
 
 /* 1. VARIÁVEIS GLOBAIS (CUSTOM PROPERTIES) - SISTEMA DE DESIGN */
 :root {
-    /* CORES PRINCIPAIS DA MARCA */
+    /* CORES PRINCIPAIS DA MARCA (Alto Contraste) */
     --cor-primaria: #FF6B6B;      /* Vermelho/Rosa (Amor, Ação Principal) */
     --cor-secundaria: #4ECDC4;    /* Azul/Ciano (Confiança, Ação Secundária) */
+    --cor-acento: #FFE66D;        /* Amarelo suave para destaques */
 
     /* CORES NEUTRAS E DE TEXTO */
-    --cor-fundo-claro: #F7F7F7;   /* Fundo geral da página */
-    --cor-fundo-escuro: #333333;  /* Fundo do rodapé e header */
+    --cor-fundo-claro: #F7F7F7;
+    --cor-fundo-escuro: #333333;
     --cor-texto-principal: #333333;
     --cor-texto-claro: #FFFFFF;
     --cor-borda: #DDDDDD;
@@ -21,10 +22,13 @@
     /* TIPOGRAFIA */
     --fonte-principal: 'Arial', sans-serif;
     --fonte-titulo: 'Georgia', serif;
-
-    /* ESPAÇAMENTO PADRÃO */
-    --espacamento-base: 16px;
-    --espacamento-duplo: 32px;
+    
+    /* ESPAÇAMENTO PADRÃO (Modular) */
+    --espacamento-p: 8px;   /* 8px */
+    --espacamento-base: 16px; /* 16px */
+    --espacamento-m: 24px;  /* 24px */
+    --espacamento-g: 32px;  /* 32px */
+    --espacamento-duplo: 48px; /* 48px */
 }
 
 
@@ -33,7 +37,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Essencial para layouts responsivos (Flexbox/Grid) */
+    box-sizing: border-box; 
 }
 
 body {
@@ -65,8 +69,9 @@ h1, h2, h3 {
     margin-bottom: var(--espacamento-base);
 }
 
+
 /* --------------------------------
- * 3. HEADER E NAVEGAÇÃO (MOBILE-FIRST)
+ * 3. HEADER E NAVEGAÇÃO (C-HEADER)
  * --------------------------------
  */
 
@@ -89,8 +94,8 @@ h1, h2, h3 {
 
 .c-header__lista-nav {
     display: flex;
-    flex-direction: column; /* MOBILE: Itens empilhados */
-    gap: 8px;
+    flex-direction: column; 
+    gap: var(--espacamento-p);
 }
 
 .c-header__lista-nav a {
@@ -104,14 +109,13 @@ h1, h2, h3 {
     color: var(--cor-secundaria);
 }
 
-/* Remove a linha divisória do HTML se presente */
 hr {
     display: none;
 }
 
 
 /* --------------------------------
- * 4. BOTÕES (C-BOTAO) - BEM
+ * 4. BOTÕES (C-BOTAO) E AÇÕES
  * --------------------------------
  */
 
@@ -125,7 +129,7 @@ hr {
 }
 
 .c-botao:active {
-    transform: scale(0.98); /* Feedback ao clique */
+    transform: scale(0.98); 
 }
 
 .c-botao--primario {
@@ -148,7 +152,17 @@ hr {
 .c-botao--acao:hover {
     background-color: #3bbfb6;
 }
+/* MODIFICADOR: Botão Secundário (Adoção) */
+.c-botao--secundario {
+    background-color: transparent; /* Fundo transparente */
+    color: var(--cor-primaria); /* Cor do texto primária (vermelho) */
+    border: 2px solid var(--cor-primaria); /* Borda primária */
+}
 
+.c-botao--secundario:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+}
 
 /* --------------------------------
  * 5. GALERIA DE ANIMAIS (C-GALERIA-ANIMAIS)
@@ -157,7 +171,7 @@ hr {
 
 .c-galeria-animais {
     display: flex;
-    flex-direction: column; /* Mobile: Cards empilhados */
+    flex-direction: column;
     gap: var(--espacamento-duplo);
     padding: var(--espacamento-base) 0;
 }
@@ -183,6 +197,12 @@ hr {
     padding: 0 var(--espacamento-base);
 }
 
+.c-card-animal__info,
+.c-card-animal__descricao {
+    padding: 0 var(--espacamento-base);
+    margin-bottom: 10px;
+}
+
 .c-card-animal__botao {
     margin: 0 var(--espacamento-base);
     display: block;
@@ -190,7 +210,54 @@ hr {
 
 
 /* --------------------------------
- * 6. ESTILIZAÇÃO DO CONTEÚDO E SEÇÕES
+ * 6. TAGS E BADGES (C-TAG)
+ * --------------------------------
+ */
+
+.c-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 var(--espacamento-base);
+    margin-bottom: var(--espacamento-base);
+}
+
+.c-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Modificador de Cor 1: Espécie Cão */
+.c-tag--cao {
+    background-color: var(--cor-acento); 
+    color: var(--cor-texto-principal);
+}
+
+/* Modificador de Cor 2: Espécie Gato */
+.c-tag--gato {
+    background-color: var(--cor-secundaria); /* Usando a cor secundária de forma suave */
+    color: var(--cor-texto-claro);
+}
+
+/* Modificador de Status: Ação Principal */
+.c-tag--urgente {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+}
+
+/* Modificador de Status: Informação */
+.c-tag--castrado {
+    background-color: #A3A3A3; /* Cinza neutro */
+    color: var(--cor-texto-claro);
+}
+
+
+/* --------------------------------
+ * 7. ESTILIZAÇÃO DO CONTEÚDO E SEÇÕES
  * --------------------------------
  */
 
@@ -199,7 +266,7 @@ hr {
 }
 
 section {
-    padding: var(--espacamento-duplo) var(--espacamento-base);
+    padding: var(--espacamento-g) var(--espacamento-base);
     margin-bottom: var(--espacamento-base);
     background-color: var(--cor-texto-claro);
     border-radius: 8px;
@@ -219,7 +286,7 @@ section {
 
 
 /* --------------------------------
- * 7. FORMULÁRIO (C-FORMULARIO) - MOBILE-FIRST
+ * 8. FORMULÁRIO (C-FORMULARIO)
  * --------------------------------
  */
 
@@ -263,7 +330,7 @@ select {
     border-radius: 4px;
     font-size: 1rem;
     box-sizing: border-box;
-    margin-bottom: var(--espacamento-base); /* Espaçamento entre inputs no mobile */
+    margin-bottom: var(--espacamento-base);
 }
 
 form > button[type="submit"] {
@@ -273,7 +340,7 @@ form > button[type="submit"] {
 
 
 /* --------------------------------
- * 8. RODAPÉ (C-FOOTER)
+ * 9. RODAPÉ (C-FOOTER)
  * --------------------------------
  */
 
@@ -290,12 +357,27 @@ form > button[type="submit"] {
     color: var(--cor-secundaria);
 }
 
-/* --------------------------------
- * 9. MEDIA QUERIES (RESPONSIVIDADE E BREAKPOINTS)
- * --------------------------------
+
+/* -----------------------------------------------------
+ * 10. MEDIA QUERIES (5 BREAKPOINTS OBRIGATÓRIOS)
+ * -----------------------------------------------------
  */
 
-/* Tablets e Desktops (Largura mínima de 768px) */
+/* BREAKPOINT 1: Mobile Padrão (320px - 479px) - Já coberto pelo Mobile-First */
+
+/* BREAKPOINT 2: MOBILE GRANDE (Largura mínima de 480px) */
+@media screen and (min-width: 480px) {
+    /* Ajustes menores de espaçamento para telas ligeiramente maiores */
+    body {
+        padding: var(--espacamento-m);
+    }
+    .c-header__logo {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* BREAKPOINT 3: TABLETS (Largura mínima de 768px) */
 @media screen and (min-width: 768px) {
     
     /* AJUSTES DO CABEÇALHO */
@@ -303,7 +385,7 @@ form > button[type="submit"] {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--espacamento-base) var(--espacamento-duplo);
+        padding: var(--espacamento-base) var(--espacamento-g);
     }
 
     .c-header__logo {
@@ -330,11 +412,10 @@ form > button[type="submit"] {
     }
 
     .c-galeria-animais__item {
-        /* Cria 2 colunas */
         width: calc(50% - (var(--espacamento-base) / 2)); 
     }
 
-    /* AJUSTES DO FORMULÁRIO (2 COLUNAS) */
+    /* AJUSTES DO FORMULÁRIO (2 COLUNAS - CSS Grid) */
     fieldset {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -342,8 +423,7 @@ form > button[type="submit"] {
     }
     
     /* O campo de endereço ocupa as 2 colunas */
-    fieldset > div:nth-child(6) { /* Contando Endereço, CEP, Cidade, Estado... */
-         /* ATENÇÃO: Se você usou o HTML de cadastro original, Endereço é o 6º div no 2º Fieldset. Se tiver dúvidas, use uma classe específica no HTML. */
+    fieldset > div:nth-child(6) { 
         grid-column: 1 / 3; 
     }
 
@@ -353,10 +433,30 @@ form > button[type="submit"] {
     }
 }
 
-/* Telas Grandes (Largura mínima de 1200px) */
+
+/* BREAKPOINT 4: DESKTOP MÉDIO (Largura mínima de 992px) */
+@media screen and (min-width: 992px) {
+    /* A galeria mantém 2 colunas, mas aumentamos o padding de seções */
+    section {
+        padding: var(--espacamento-duplo) var(--espacamento-g);
+    }
+
+    .c-main {
+        padding: var(--espacamento-duplo) 0;
+    }
+}
+
+
+/* BREAKPOINT 5: DESKTOP GRANDE (Largura mínima de 1200px) */
 @media screen and (min-width: 1200px) {
     .c-galeria-animais__item {
         /* Cria 3 colunas */
         width: calc(33.33% - (var(--espacamento-base) * 2 / 3)); 
+    }
+
+    /* Centraliza o conteúdo principal em telas muito grandes */
+    .c-main {
+        max-width: 1300px;
+        margin: 0 auto;
     }
 }
