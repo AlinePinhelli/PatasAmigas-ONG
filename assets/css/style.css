@@ -80,12 +80,13 @@ h1, h2, h3 {
     color: var(--cor-texto-claro);
     padding: var(--espacamento-base) 0;
     text-align: center;
+    position: relative; 
 }
 
 .c-header__logo {
     font-size: 1.5rem;
     margin-bottom: var(--espacamento-base);
-    padding: 0 var(--espacamento-base);
+    padding: 0 60px 0 var(--espacamento-base);
 }
 
 .c-header__nav {
@@ -113,6 +114,36 @@ hr {
     display: none;
 }
 
+
+/* --------------------------------
+ * 3.1. MENU HAMBÚRGUER (MOBILE)
+ * --------------------------------
+ */
+
+.c-menu-hamburguer {
+    /* Estilos base: o display será controlado nas Media Queries */
+    display: none; 
+    position: absolute; 
+    top: 1.5rem; 
+    right: var(--espacamento-base);
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    padding: 0;
+}
+
+.c-menu-hamburguer__barra {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--cor-texto-claro);
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
 
 /* --------------------------------
  * 4. BOTÕES (C-BOTAO) E AÇÕES
@@ -152,17 +183,19 @@ hr {
 .c-botao--acao:hover {
     background-color: #3bbfb6;
 }
-/* MODIFICADOR: Botão Secundário (Adoção) */
+
+/* Estilo para Botão Secundário - Alto Contraste para Links de Cards */
 .c-botao--secundario {
-    background-color: transparent; /* Fundo transparente */
-    color: var(--cor-primaria); /* Cor do texto primária (vermelho) */
-    border: 2px solid var(--cor-primaria); /* Borda primária */
+    background-color: transparent; 
+    color: var(--cor-primaria); 
+    border: 2px solid var(--cor-primaria); 
 }
 
 .c-botao--secundario:hover {
     background-color: var(--cor-primaria);
     color: var(--cor-texto-claro);
 }
+
 
 /* --------------------------------
  * 5. GALERIA DE ANIMAIS (C-GALERIA-ANIMAIS)
@@ -174,6 +207,11 @@ hr {
     flex-direction: column;
     gap: var(--espacamento-duplo);
     padding: var(--espacamento-base) 0;
+}
+
+.c-galeria-animais__item {
+    /* Necessário para o layout de colunas no desktop */
+    width: 100%;
 }
 
 .c-card-animal {
@@ -190,6 +228,7 @@ hr {
     height: 200px;
     object-fit: cover;
     margin-bottom: var(--espacamento-base);
+    cursor: pointer; 
 }
 
 .c-card-animal__titulo {
@@ -231,27 +270,23 @@ hr {
     text-transform: uppercase;
 }
 
-/* Modificador de Cor 1: Espécie Cão */
 .c-tag--cao {
     background-color: var(--cor-acento); 
     color: var(--cor-texto-principal);
 }
 
-/* Modificador de Cor 2: Espécie Gato */
 .c-tag--gato {
-    background-color: var(--cor-secundaria); /* Usando a cor secundária de forma suave */
+    background-color: var(--cor-secundaria); 
     color: var(--cor-texto-claro);
 }
 
-/* Modificador de Status: Ação Principal */
 .c-tag--urgente {
     background-color: var(--cor-primaria);
     color: var(--cor-texto-claro);
 }
 
-/* Modificador de Status: Informação */
 .c-tag--castrado {
-    background-color: #A3A3A3; /* Cinza neutro */
+    background-color: #A3A3A3; 
     color: var(--cor-texto-claro);
 }
 
@@ -367,7 +402,6 @@ form > button[type="submit"] {
 
 /* BREAKPOINT 2: MOBILE GRANDE (Largura mínima de 480px) */
 @media screen and (min-width: 480px) {
-    /* Ajustes menores de espaçamento para telas ligeiramente maiores */
     body {
         padding: var(--espacamento-m);
     }
@@ -388,18 +422,28 @@ form > button[type="submit"] {
         padding: var(--espacamento-base) var(--espacamento-g);
     }
 
+    /* Oculta o botão hambúrguer no tablet/desktop */
+    .c-menu-hamburguer {
+        display: none;
+    }
+
     .c-header__logo {
         margin-bottom: 0;
         font-size: 1.8rem;
     }
 
-    /* AJUSTES DA NAVEGAÇÃO */
+    /* GARANTIR QUE A NAVEGAÇÃO GRANDE FIQUE VISÍVEL NO DESKTOP */
     .c-header__nav {
+        position: static; 
+        height: auto;
+        transform: none;
+        padding-top: 0;
+        background-color: transparent;
         padding: 0;
     }
     
     .c-header__lista-nav {
-        flex-direction: row; /* Desktop: em linha */
+        flex-direction: row; 
         gap: var(--espacamento-base);
     }
     
@@ -433,10 +477,8 @@ form > button[type="submit"] {
     }
 }
 
-
 /* BREAKPOINT 4: DESKTOP MÉDIO (Largura mínima de 992px) */
 @media screen and (min-width: 992px) {
-    /* A galeria mantém 2 colunas, mas aumentamos o padding de seções */
     section {
         padding: var(--espacamento-duplo) var(--espacamento-g);
     }
@@ -458,5 +500,51 @@ form > button[type="submit"] {
     .c-main {
         max-width: 1300px;
         margin: 0 auto;
+    }
+}
+
+/* ESTILOS ESPECÍFICOS PARA O MOBILE (MAX-WIDTH: 767px) */
+@media screen and (max-width: 767px) {
+    
+    /* CORREÇÃO: MOSTRAR O BOTÃO HAMBÚRGUER E FIXAR NA TELA */
+    .c-menu-hamburguer {
+        display: block; 
+        position: fixed; /* O ícone fica fixo na tela durante a rolagem */
+        z-index: 150;    
+        top: 1.5rem;
+        right: var(--espacamento-base);
+    }
+    
+    /* Ajuste para que o logo não interfira na área do botão */
+    .c-header__logo {
+        padding-right: 60px;
+    }
+
+    /* ESCONDER A NAVEGAÇÃO GRANDE POR PADRÃO NO MOBILE */
+    .c-header__nav {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        background-color: var(--cor-fundo-escuro); 
+        padding-top: 80px; /* Garante que os links comecem abaixo do logo/botão */
+        z-index: 50;
+        
+        /* Oculta o menu */
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Estilo para quando o MENU ESTIVER ABERTO (Adicionaremos a classe 'is-open' via JS) */
+    .c-header__nav.is-open {
+        transform: translateX(0); /* Traz o menu para dentro da tela */
+    }
+
+    /* Lista do Menu no Mobile (Vertical) */
+    .c-header__lista-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--espacamento-g);
     }
 }
