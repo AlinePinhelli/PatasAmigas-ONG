@@ -26,7 +26,7 @@ Esta entrega focou na criação da estrutura base do projeto, utilizando apenas 
 ### 📁 Estrutura de Arquivos
 
 A estrutura do projeto está organizada da seguinte forma:
-[Seu Repositório] ├── index.html ├── projetos.html ├── cadastro.html └── assets/ ├── css/ ├── js/ └── images/ └── [Arquivos de Imagem da ONG]
+[PatasAmigas-ONG] ├── index.html ├── projetos.html ├── cadastro.html └── assets/ ├── css/ ├── js/ └── images/ └── [Arquivos de Imagem da ONG]
 
 
 ---
@@ -37,7 +37,7 @@ Para visualizar a estrutura da Entrega I, basta clonar este repositório e abrir
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [Link do seu repositório público]
+    git clone (https://github.com/AlinePinhelli/PatasAmigas-ONG)
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
