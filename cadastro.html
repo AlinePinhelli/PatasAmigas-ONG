@@ -12,6 +12,12 @@
     <header class="c-header">
         <h1 class="c-header__logo">Patas Amigas: Formulário de Inscrição</h1>
         
+        <button class="c-menu-hamburguer" id="menu-toggle" aria-label="Abrir Menu Principal">
+            <span class="c-menu-hamburguer__barra"></span>
+            <span class="c-menu-hamburguer__barra"></span>
+            <span class="c-menu-hamburguer__barra"></span>
+        </button>
+        
         <nav class="c-header__nav">
             <ul class="c-header__lista-nav">
                 <li><a href="index.html">Início</a></li>
@@ -20,89 +26,12 @@
             </ul>
         </nav>
     </header>
-
+    
     <main class="c-main">
         
         <section>
             <h2>Junte-se a Nós!</h2>
-            <p>Preencha o formulário abaixo para manifestar interesse em adoção ou para se tornar um voluntário da Patas Amigas.</p>
-
-            <form class="c-formulario" id="formulario-inscricao">
-                
-                <fieldset>
-                    <legend>Dados Pessoais e Contato</legend>
-                    
-                    <div>
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-
-                    <div>
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div>
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(XX) 9XXXX-XXXX" required>
-                    </div>
-                    
-                    <div>
-                        <label for="data-nascimento">Data de Nascimento</label>
-                        <input type="date" id="data-nascimento" name="data-nascimento" required>
-                    </div>
-                </fieldset>
-                
-                <fieldset>
-                    <legend>Informações de Endereço</legend>
-                    
-                    <div>
-                        <label for="endereco">Endereço (Rua, Número, Complemento)</label>
-                        <input type="text" id="endereco" name="endereco" required>
-                    </div>
-                    
-                    <div>
-                        <label for="cep">CEP</label>
-                        <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="XXXXX-XXX" required>
-                    </div>
-                    
-                    <div>
-                        <label for="cidade">Cidade</label>
-                        <input type="text" id="cidade" name="cidade" required>
-                    </div>
-
-                    <div>
-                        <label for="estado">Estado</label>
-                        <select id="estado" name="estado" required>
-                            <option value="">Selecione</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="SP">São Paulo</option>
-                            </select>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Qual seu objetivo?</legend>
-
-                    <div>
-                        <input type="radio" id="adocao" name="objetivo" value="adocao" required>
-                        <label for="adocao">Quero Adotar um animal</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" id="voluntario" name="objetivo" value="voluntario" required>
-                        <label for="voluntario">Quero ser Voluntário</label>
-                    </div>
-
-                    <div>
-                        <label for="mensagem">Deixe uma mensagem sobre seu interesse:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5"></textarea>
-                    </div>
-                </fieldset>
-
-                <button type="submit" class="c-botao c-botao--primario">Enviar Inscrição</button>
-            </form>
-        </section>
+            </section>
     </main>
 
     <footer class="c-footer">
