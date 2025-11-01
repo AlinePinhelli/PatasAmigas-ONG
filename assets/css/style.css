@@ -1,0 +1,362 @@
+/*
+ * -----------------------------------------------------
+ * ARQUIVO: assets/css/style.css
+ * ENTREGA II: CSS AVANÇADO, BEM E RESPONSIVIDADE
+ * -----------------------------------------------------
+ */
+
+/* 1. VARIÁVEIS GLOBAIS (CUSTOM PROPERTIES) - SISTEMA DE DESIGN */
+:root {
+    /* CORES PRINCIPAIS DA MARCA */
+    --cor-primaria: #FF6B6B;      /* Vermelho/Rosa (Amor, Ação Principal) */
+    --cor-secundaria: #4ECDC4;    /* Azul/Ciano (Confiança, Ação Secundária) */
+
+    /* CORES NEUTRAS E DE TEXTO */
+    --cor-fundo-claro: #F7F7F7;   /* Fundo geral da página */
+    --cor-fundo-escuro: #333333;  /* Fundo do rodapé e header */
+    --cor-texto-principal: #333333;
+    --cor-texto-claro: #FFFFFF;
+    --cor-borda: #DDDDDD;
+
+    /* TIPOGRAFIA */
+    --fonte-principal: 'Arial', sans-serif;
+    --fonte-titulo: 'Georgia', serif;
+
+    /* ESPAÇAMENTO PADRÃO */
+    --espacamento-base: 16px;
+    --espacamento-duplo: 32px;
+}
+
+
+/* 2. RESET E ESTILOS GERAIS (MOBILE-FIRST) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para layouts responsivos (Flexbox/Grid) */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo-claro);
+    line-height: 1.6;
+    padding: var(--espacamento-base);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: var(--espacamento-base);
+}
+
+/* --------------------------------
+ * 3. HEADER E NAVEGAÇÃO (MOBILE-FIRST)
+ * --------------------------------
+ */
+
+.c-header {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    padding: var(--espacamento-base) 0;
+    text-align: center;
+}
+
+.c-header__logo {
+    font-size: 1.5rem;
+    margin-bottom: var(--espacamento-base);
+    padding: 0 var(--espacamento-base);
+}
+
+.c-header__nav {
+    padding: 0 var(--espacamento-base);
+}
+
+.c-header__lista-nav {
+    display: flex;
+    flex-direction: column; /* MOBILE: Itens empilhados */
+    gap: 8px;
+}
+
+.c-header__lista-nav a {
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    padding: 5px 0;
+    display: block;
+}
+
+.c-header__lista-nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Remove a linha divisória do HTML se presente */
+hr {
+    display: none;
+}
+
+
+/* --------------------------------
+ * 4. BOTÕES (C-BOTAO) - BEM
+ * --------------------------------
+ */
+
+.c-botao {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.c-botao:active {
+    transform: scale(0.98); /* Feedback ao clique */
+}
+
+.c-botao--primario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border: 2px solid var(--cor-primaria);
+}
+
+.c-botao--primario:hover {
+    background-color: #e65a5a;
+}
+
+.c-botao--acao {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-principal);
+    border: 2px solid var(--cor-secundaria);
+    margin-top: var(--espacamento-base);
+}
+
+.c-botao--acao:hover {
+    background-color: #3bbfb6;
+}
+
+
+/* --------------------------------
+ * 5. GALERIA DE ANIMAIS (C-GALERIA-ANIMAIS)
+ * --------------------------------
+ */
+
+.c-galeria-animais {
+    display: flex;
+    flex-direction: column; /* Mobile: Cards empilhados */
+    gap: var(--espacamento-duplo);
+    padding: var(--espacamento-base) 0;
+}
+
+.c-card-animal {
+    background-color: var(--cor-texto-claro);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: var(--espacamento-base);
+}
+
+.c-card-animal__imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: var(--espacamento-base);
+}
+
+.c-card-animal__titulo {
+    font-size: 1.3rem;
+    padding: 0 var(--espacamento-base);
+}
+
+.c-card-animal__botao {
+    margin: 0 var(--espacamento-base);
+    display: block;
+}
+
+
+/* --------------------------------
+ * 6. ESTILIZAÇÃO DO CONTEÚDO E SEÇÕES
+ * --------------------------------
+ */
+
+.c-main {
+    padding: var(--espacamento-base);
+}
+
+section {
+    padding: var(--espacamento-duplo) var(--espacamento-base);
+    margin-bottom: var(--espacamento-base);
+    background-color: var(--cor-texto-claro);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.c-figure-destaque {
+    margin: var(--espacamento-base) 0;
+    text-align: center;
+}
+
+.c-figure-destaque__imagem {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+
+/* --------------------------------
+ * 7. FORMULÁRIO (C-FORMULARIO) - MOBILE-FIRST
+ * --------------------------------
+ */
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--cor-texto-claro);
+    padding: var(--espacamento-duplo);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+fieldset {
+    border: 1px solid var(--cor-borda);
+    padding: var(--espacamento-base);
+    margin-bottom: var(--espacamento-duplo);
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: var(--espacamento-base); /* Espaçamento entre inputs no mobile */
+}
+
+form > button[type="submit"] {
+    display: block;
+    margin: var(--espacamento-duplo) auto;
+}
+
+
+/* --------------------------------
+ * 8. RODAPÉ (C-FOOTER)
+ * --------------------------------
+ */
+
+.c-footer {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: var(--espacamento-base);
+    margin-top: var(--espacamento-duplo); 
+    border-radius: 8px;
+}
+
+.c-footer a {
+    color: var(--cor-secundaria);
+}
+
+/* --------------------------------
+ * 9. MEDIA QUERIES (RESPONSIVIDADE E BREAKPOINTS)
+ * --------------------------------
+ */
+
+/* Tablets e Desktops (Largura mínima de 768px) */
+@media screen and (min-width: 768px) {
+    
+    /* AJUSTES DO CABEÇALHO */
+    .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--espacamento-base) var(--espacamento-duplo);
+    }
+
+    .c-header__logo {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+
+    /* AJUSTES DA NAVEGAÇÃO */
+    .c-header__nav {
+        padding: 0;
+    }
+    
+    .c-header__lista-nav {
+        flex-direction: row; /* Desktop: em linha */
+        gap: var(--espacamento-base);
+    }
+    
+    /* AJUSTES DA GALERIA (2 COLUNAS) */
+    .c-galeria-animais {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--espacamento-base);
+    }
+
+    .c-galeria-animais__item {
+        /* Cria 2 colunas */
+        width: calc(50% - (var(--espacamento-base) / 2)); 
+    }
+
+    /* AJUSTES DO FORMULÁRIO (2 COLUNAS) */
+    fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--espacamento-base) var(--espacamento-duplo);
+    }
+    
+    /* O campo de endereço ocupa as 2 colunas */
+    fieldset > div:nth-child(6) { /* Contando Endereço, CEP, Cidade, Estado... */
+         /* ATENÇÃO: Se você usou o HTML de cadastro original, Endereço é o 6º div no 2º Fieldset. Se tiver dúvidas, use uma classe específica no HTML. */
+        grid-column: 1 / 3; 
+    }
+
+    /* Remove a margem extra inferior nos inputs em layout grid */
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+        margin-bottom: 0;
+    }
+}
+
+/* Telas Grandes (Largura mínima de 1200px) */
+@media screen and (min-width: 1200px) {
+    .c-galeria-animais__item {
+        /* Cria 3 colunas */
+        width: calc(33.33% - (var(--espacamento-base) * 2 / 3)); 
+    }
+}

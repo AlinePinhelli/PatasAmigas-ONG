@@ -3,121 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | Patas Amigas - Candidatura de Adoção</title>
+    <title>Cadastro | Patas Amigas</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css"> 
 </head>
 <body>
 
-    <header>
-        <h1>Patas Amigas</h1>
-        <nav>
-            <ul>
+    <header class="c-header">
+        <h1 class="c-header__logo">Patas Amigas: Formulário de Inscrição</h1>
+        
+        <nav class="c-header__nav">
+            <ul class="c-header__lista-nav">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="projetos.html">Animais para Adoção</a></li>
-                <li><a href="cadastro.html">Quero Adotar!</a></li>
+                <li><a href="cadastro.html">Quero Adotar / Voluntariar</a></li>
             </ul>
         </nav>
-        <hr>
     </header>
 
-    <main>
-        <h2>Formulário de Candidatura para Adoção Responsável</h2>
+    <main class="c-main">
+        
+        <section>
+            <h2>Junte-se a Nós!</h2>
+            <p>Preencha o formulário abaixo para manifestar interesse em adoção ou para se tornar um voluntário da Patas Amigas.</p>
 
-        <figure>
-            <img src="assets/images/ilustracao_adocao_feliz.jpeg" alt="Pessoa abraçando um cachorro, representando uma adoção bem-sucedida." width="600">
-            <figcaption>Preencha com atenção, o futuro de um pet depende de você!</figcaption>
-        </figure>
-
-        <form action="#" method="POST">
-            <fieldset>
-                <legend>Dados Pessoais do Candidato</legend>
-
-                <div>
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome_completo" required>
-                </div>
-
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email_contato" required>
-                </div>
-
-                <div>
-                    <label for="cpf">CPF (Máscara: 999.999.999-99):</label>
-                    <input 
-                        type="text" 
-                        id="cpf" 
-                        name="cpf" 
-                        required
-                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-                        maxlength="14"
-                        placeholder="Ex: 123.456.789-00"
-                        title="Formato exigido: 999.999.999-99">
-                </div>
+            <form class="c-formulario" id="formulario-inscricao">
                 
-                <div>
-                    <label for="telefone">Telefone (Máscara: (99) 99999-9999):</label>
-                    <input 
-                        type="tel" 
-                        id="telefone" 
-                        name="telefone" 
-                        required
-                        pattern="\(\d{2}\) \d{5}-\d{4}"
-                        maxlength="15"
-                        placeholder="Ex: (21) 98765-4321"
-                        title="Formato exigido: (99) 99999-9999">
-                </div>
+                <fieldset>
+                    <legend>Dados Pessoais e Contato</legend>
+                    
+                    <div>
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
 
-                <div>
-                    <label for="data_nasc">Data de Nascimento:</label>
-                    <input type="date" id="data_nasc" name="data_nasc" required>
-                </div>
-            </fieldset>
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-            <fieldset>
-                <legend>Dados de Residência</legend>
+                    <div>
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(XX) 9XXXX-XXXX" required>
+                    </div>
+                    
+                    <div>
+                        <label for="data-nascimento">Data de Nascimento</label>
+                        <input type="date" id="data-nascimento" name="data-nascimento" required>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Informações de Endereço</legend>
+                    
+                    <div>
+                        <label for="endereco">Endereço (Rua, Número, Complemento)</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
+                    
+                    <div>
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="XXXXX-XXX" required>
+                    </div>
+                    
+                    <div>
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
 
-                <div>
-                    <label for="cep">CEP (Máscara: 99999-999):</label>
-                    <input 
-                        type="text" 
-                        id="cep" 
-                        name="cep" 
-                        required
-                        pattern="\d{5}-\d{3}"
-                        maxlength="9"
-                        placeholder="Ex: 20000-000"
-                        title="Formato exigido: 99999-999">
-                </div>
+                    <div>
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP">São Paulo</option>
+                            </select>
+                    </div>
+                </fieldset>
 
-                <div>
-                    <label for="endereco">Endereço (Rua, Número e Complemento):</label>
-                    <input type="text" id="endereco" name="endereco" required>
-                </div>
+                <fieldset>
+                    <legend>Qual seu objetivo?</legend>
 
-                <div>
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" required>
-                </div>
+                    <div>
+                        <input type="radio" id="adocao" name="objetivo" value="adocao" required>
+                        <label for="adocao">Quero Adotar um animal</label>
+                    </div>
+                    
+                    <div>
+                        <input type="radio" id="voluntario" name="objetivo" value="voluntario" required>
+                        <label for="voluntario">Quero ser Voluntário</label>
+                    </div>
 
-                <div>
-                    <label for="estado">Estado:</label>
-                    <select id="estado" name="estado" required>
-                        <option value="">Selecione</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="MG">Minas Gerais</option>
-                        </select>
-                </div>
-            </fieldset>
-            
-            <button type="submit">Enviar Candidatura</button>
+                    <div>
+                        <label for="mensagem">Deixe uma mensagem sobre seu interesse:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                    </div>
+                </fieldset>
 
-        </form>
+                <button type="submit" class="c-botao c-botao--primario">Enviar Inscrição</button>
+            </form>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Patas Amigas ONG. Todos os direitos reservados.</p>
+    <footer class="c-footer">
+        <p class="c-footer__copyright">&copy; 2025 Patas Amigas ONG. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>

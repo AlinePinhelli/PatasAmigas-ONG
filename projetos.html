@@ -4,84 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animais para Adoção | Patas Amigas</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css"> 
 </head>
 <body>
 
-    <header>
-        <h1>Patas Amigas: Encontre Seu Melhor Amigo</h1>
-        <nav>
-            <ul>
+    <header class="c-header">
+        <h1 class="c-header__logo">Patas Amigas: Encontre Seu Melhor Amigo</h1>
+        
+        <nav class="c-header__nav">
+            <ul class="c-header__lista-nav">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="projetos.html">Animais para Adoção</a></li>
                 <li><a href="cadastro.html">Quero Adotar / Voluntariar</a></li>
             </ul>
         </nav>
-        <hr>
     </header>
 
-    <main>
-        <section>
+    <main class="c-main">
+        
+        <section class="c-secao-galeria">
             <h2>Nossos Amigos à Espera de um Lar</h2>
             
-            <figure>
-                <img src="assets/images/header_galeria_adocao.jpg" alt="Foto de vários filhotes brincando juntos." width="800">
-                <figcaption>Cada adoção abre espaço para um novo resgate!</figcaption>
+            <figure class="c-figure-destaque">
+                <img src="assets/images/header_galeria_adocao.jpg" 
+                     alt="Foto de vários filhotes brincando juntos." 
+                     width="800" 
+                     class="c-figure-destaque__imagem">
+                <figcaption class="c-figure-destaque__legenda">
+                    Cada adoção abre espaço para um novo resgate!
+                </figcaption>
             </figure>
 
-            <ul class="galeria-animais">
-                <li>
-                    <article>
-                        <h3>Bolinha (Cão)</h3>
-                        <img src="assets/images/animal_bolinha.jpg" alt="Foto de um cachorro pequeno e branco, nome Bolinha." width="300">
-                        <p><strong>Porte:</strong> Pequeno | <strong>Idade:</strong> 2 anos</p>
-                        <p>Bolinha é super dócil e adora crianças. Resgatado em Fevereiro de 2025.</p>
-                        <a href="cadastro.html">Candidatar-se para Adoção</a>
+            <ul class="c-galeria-animais">
+                
+                <li class="c-galeria-animais__item">
+                    <article class="c-card-animal">
+                        <h3 class="c-card-animal__titulo">Bolinha (Cão)</h3>
+                        <img class="c-card-animal__imagem" 
+                             src="assets/images/animal_bolinha.jpg" 
+                             alt="Foto de um cachorro pequeno e branco, nome Bolinha.">
+                        <p class="c-card-animal__info"><strong>Porte:</strong> Pequeno | <strong>Idade:</strong> 2 anos</p>
+                        <p class="c-card-animal__descricao">Bolinha é super dócil e adora crianças. Resgatado em Fevereiro de 2025.</p>
+                        <a class="c-card-animal__botao c-card-animal__botao--primario c-botao" 
+                           href="cadastro.html">Candidatar-se para Adoção</a>
                     </article>
                 </li>
 
-                <li>
-                    <article>
-                        <h3>Mia (Gato)</h3>
-                        <img src="assets/images/animal_mia.jpg" alt="Foto de uma gata preta e branca, nome Mia." width="300">
-                        <p><strong>Porte:</strong> Médio | <strong>Idade:</strong> 6 meses</p>
-                        <p>Mia é brincalhona e curiosa. Ideal para apartamentos. Precisa ser castrada.</p>
-                        <a href="cadastro.html">Candidatar-se para Adoção</a>
+                <li class="c-galeria-animais__item">
+                    <article class="c-card-animal c-card-animal--gato">
+                        <h3 class="c-card-animal__titulo">Mia (Gato)</h3>
+                        <img class="c-card-animal__imagem" 
+                             src="assets/images/animal_mia.jpg" 
+                             alt="Foto de uma gata preta e branca, nome Mia.">
+                        <p class="c-card-animal__info"><strong>Porte:</strong> Médio | <strong>Idade:</strong> 6 meses</p>
+                        <p class="c-card-animal__descricao">Mia é brincalhona e curiosa. Ideal para apartamentos. Precisa ser castrada.</p>
+                        <a class="c-card-animal__botao c-card-animal__botao--secundario c-botao" 
+                           href="cadastro.html">Candidatar-se para Adoção</a>
                     </article>
                 </li>
-                </ul>
+                 <li class="c-galeria-animais__item">
+                    <article class="c-card-animal">
+                        <h3 class="c-card-animal__titulo">Mel (Cão)</h3>
+                        <img class="c-card-animal__imagem" 
+                             src="assets/images/animal_mel.jpg" 
+                             alt="Foto de um cachorro pequeno e marrom, nome Mel.">
+                        <p class="c-card-animal__info"><strong>Porte:</strong> Médio | <strong>Idade:</strong> 1 ano</p>
+                        <p class="c-card-animal__descricao">Mel é carinhosa e adora brincar. Resgatada em Março de 2025.</p>
+                        <a class="c-card-animal__botao c-card-animal__botao--secundario c-botao" 
+                           href="cadastro.html">Candidatar-se para Adoção</a>
+                    </article>
+                </li>
+                 <li class="c-galeria-animais__item">
+                    <article class="c-card-animal c-card-animal--gato">
+                        <h3 class="c-card-animal__titulo">Tom (Gato)</h3>
+                        <img class="c-card-animal__imagem" 
+                             src="assets/images/animal_tom.jpg" 
+                             alt="Foto de um gato laranja, nome Tom.">
+                        <p class="c-card-animal__info"><strong>Porte:</strong> Médio | <strong>Idade:</strong> 2 anos</p>
+                        <p class="c-card-animal__descricao">Tom é tranquilo e afetuoso. Adora um colo e é ótimo com crianças.</p>
+                        <a class="c-card-animal__botao c-card-animal__botao--secundario c-botao" 
+                           href="cadastro.html">Candidatar-se para Adoção</a>
+                    </article>
+                </li>
+                <li class="c-galeria-animais__item">
+                    <article class="c-card-animal">
+                        <h3 class="c-card-animal__titulo">Thor (Cão)</h3>
+                        <img class="c-card-animal__imagem" 
+                             src="assets/images/animal_thor.jpg" 
+                             alt="Foto de um cachorro grande e preto, nome Thor.">
+                        <p class="c-card-animal__info"><strong>Porte:</strong> Grande | <strong>Idade:</strong> 3 anos</p>
+                        <p class="c-card-animal__descricao">Thor é protetor e leal. Adora brincar e fazer companhia.</p>
+                        <a class="c-card-animal__botao c-card-animal__botao--secundario c-botao" 
+                           href="cadastro.html">Candidatar-se para Adoção</a>
+                    </article>
+                </li>
+
+                 <li class="c-galeria-animais__item">
+                    <article class="c-card-animal c-card-animal--gato">
+                        <h3 class="c-card-animal__titulo">Dumbo (Gato)</h3>
+                        <img class="c-card-animal__imagem" 
+                             src="assets/images/animal_dumbo.jpg" 
+                             alt="Foto de um gato cinza e branco, nome Dumbo.">
+                        <p class="c-card-animal__info"><strong>Porte:</strong> Médio | <strong>Idade:</strong> 6 meses</p>
+                        <p class="c-card-animal__descricao">Dumbo é brincalhão e curioso. Ideal para apartamentos. Precisa ser castrado.</p>
+                        <a class="c-card-animal__botao c-card-animal__botao--secundario c-botao" 
+                           href="cadastro.html">Candidatar-se para Adoção</a>
+                    </article>
+                </li>
+            </ul>
         </section>
 
-        <section>
+        <section class="c-secao-voluntariado">
             <h2>Seja Voluntário e Transforme Vidas</h2>
             <p>Se você não pode adotar, pode ser um anjo na vida de nossos resgatados. Temos diversas oportunidades, desde Lar Temporário até ajuda em eventos.</p>
             
-            <dl>
-                <dt>Lar Temporário</dt>
-                <dd>Ofereça um lar de passagem enquanto o pet não encontra a família definitiva.</dd>
-                <dt>Ajuda em Eventos</dt>
-                <dd>Participe de feiras de adoção e arrecadação de fundos.</dd>
+            <dl class="c-lista-voluntariado">
+                <dt class="c-lista-voluntariado__titulo">Lar Temporário</dt>
+                <dd class="c-lista-voluntariado__descricao">Ofereça um lar de passagem enquanto o pet não encontra a família definitiva.</dd>
+                
+                <dt class="c-lista-voluntariado__titulo">Ajuda em Eventos</dt>
+                <dd class="c-lista-voluntariado__descricao">Participe de feiras de adoção e arrecadação de fundos.</dd>
             </dl>
 
-            <a href="cadastro.html">Quero ser Voluntário</a>
+            <a href="cadastro.html" class="c-botao c-botao--acao">Quero ser Voluntário</a>
         </section>
 
-        <section>
+        <section class="c-secao-doacao">
             <h2>Apoie Nossa Causa: Como Doar</h2>
             <p>Toda ajuda é vital para custear alimentação, vacinas e procedimentos veterinários.</p>
             
-            <article class="campanha-doacao">
-                <h3>Campanha Atual: Ajude o Resgate de Março</h3>
-                <p>Nossa meta é arrecadar R$ 5.000 para tratar 15 animais abandonados recentemente.</p>
-                <p><strong>Progresso:</strong> R$ 2.500 arrecadados!</p>
-                <a href="#">Realizar Doação Online (Futura Implementação)</a>
+            <article class="c-card-campanha">
+                <h3 class="c-card-campanha__titulo">Campanha Atual: Ajude o Resgate de Março</h3>
+                <p class="c-card-campanha__meta">Nossa meta é arrecadar R$ 5.000 para tratar 15 animais abandonados recentemente.</p>
+                <p class="c-card-campanha__progresso"><strong>Progresso:</strong> R$ 2.500 arrecadados!</p>
+                <a href="#" class="c-botao c-botao--acao">Realizar Doação Online (Futura Implementação)</a>
             </article>
             
             <img src="assets/images/doacao_racao.jpeg" alt="Pilha de sacos de ração, ilustrando doações." width="400">
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Patas Amigas ONG. Contato: (21) 99999-0000 | <a href="mailto:contato@patasamigas.org">contato@patasamigas.org</a></p>
+    <footer class="c-footer">
+        <p class="c-footer__copyright">&copy; 2025 Patas Amigas ONG. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
