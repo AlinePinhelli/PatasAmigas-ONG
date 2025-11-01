@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Patas Amigas - Candidatura de Adoção</title>
+</head>
+<body>
+
+    <header>
+        <h1>Patas Amigas</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Animais para Adoção</a></li>
+                <li><a href="cadastro.html">Quero Adotar!</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Formulário de Candidatura para Adoção Responsável</h2>
+
+        <figure>
+            <img src="assets/images/ilustracao_adocao_feliz.jpeg" alt="Pessoa abraçando um cachorro, representando uma adoção bem-sucedida." width="600">
+            <figcaption>Preencha com atenção, o futuro de um pet depende de você!</figcaption>
+        </figure>
+
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Dados Pessoais do Candidato</legend>
+
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome_completo" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email_contato" required>
+                </div>
+
+                <div>
+                    <label for="cpf">CPF (Máscara: 999.999.999-99):</label>
+                    <input 
+                        type="text" 
+                        id="cpf" 
+                        name="cpf" 
+                        required
+                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                        maxlength="14"
+                        placeholder="Ex: 123.456.789-00"
+                        title="Formato exigido: 999.999.999-99">
+                </div>
+                
+                <div>
+                    <label for="telefone">Telefone (Máscara: (99) 99999-9999):</label>
+                    <input 
+                        type="tel" 
+                        id="telefone" 
+                        name="telefone" 
+                        required
+                        pattern="\(\d{2}\) \d{5}-\d{4}"
+                        maxlength="15"
+                        placeholder="Ex: (21) 98765-4321"
+                        title="Formato exigido: (99) 99999-9999">
+                </div>
+
+                <div>
+                    <label for="data_nasc">Data de Nascimento:</label>
+                    <input type="date" id="data_nasc" name="data_nasc" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados de Residência</legend>
+
+                <div>
+                    <label for="cep">CEP (Máscara: 99999-999):</label>
+                    <input 
+                        type="text" 
+                        id="cep" 
+                        name="cep" 
+                        required
+                        pattern="\d{5}-\d{3}"
+                        maxlength="9"
+                        placeholder="Ex: 20000-000"
+                        title="Formato exigido: 99999-999">
+                </div>
+
+                <div>
+                    <label for="endereco">Endereço (Rua, Número e Complemento):</label>
+                    <input type="text" id="endereco" name="endereco" required>
+                </div>
+
+                <div>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+
+                <div>
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Selecione</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="MG">Minas Gerais</option>
+                        </select>
+                </div>
+            </fieldset>
+            
+            <button type="submit">Enviar Candidatura</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Patas Amigas ONG. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
