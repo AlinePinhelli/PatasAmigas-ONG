@@ -158,7 +158,8 @@ function setupValidacaoFormulario() {
 
   const erroGlobalDiv = document.createElement("div");
   erroGlobalDiv.id = "erro-global";
-  erroGlobalDiv.textContent = "Por favor, corrija os erros nos campos marcados.";
+  erroGlobalDiv.textContent =
+    "Por favor, corrija os erros nos campos marcados.";
   formulario.prepend(erroGlobalDiv);
 
   function validarIdade(input) {
@@ -202,7 +203,10 @@ function setupValidacaoFormulario() {
     erroGlobalDiv.classList.remove("erro-ativo");
 
     // 1. Validação de Idade Mínima
-    if (!validarIdade(inputDataNascimento) || inputDataNascimento.value === "") {
+    if (
+      !validarIdade(inputDataNascimento) ||
+      inputDataNascimento.value === ""
+    ) {
       formValido = false;
       exibirErro(
         inputDataNascimento,
@@ -273,37 +277,34 @@ const handleTelefone = event => {
   event.target.value = phoneMask(event.target.value);
 };
 
-
 // =========================================================
 // 6. TEMA ESCURO / ALTO CONTRASTE (Alternância)
 // =========================================================
 
 function setupTemaAlternancia() {
-    const temaToggle = document.getElementById('tema-toggle');
-    const body = document.body;
+  const temaToggle = document.getElementById("tema-toggle");
+  const body = document.body;
 
-    if (!temaToggle) return;
+  if (!temaToggle) return;
 
-    // Função que aplica/remove a classe
-    temaToggle.addEventListener('click', () => {
-        body.classList.toggle('tema-escuro');
+  // Função que aplica/remove a classe
+  temaToggle.addEventListener("click", () => {
+    body.classList.toggle("tema-escuro");
 
-        // Salvar a preferência do usuário (requisito avançado de persistência)
-        if (body.classList.contains('tema-escuro')) {
-            localStorage.setItem('tema', 'escuro');
-        } else {
-            localStorage.setItem('tema', 'claro');
-        }
-    });
-
-    // Carregar a preferência salva ao iniciar
-    const temaSalvo = localStorage.getItem('tema');
-    if (temaSalvo === 'escuro') {
-        body.classList.add('tema-escuro');
+    // Salvar a preferência do usuário (requisito avançado de persistência)
+    if (body.classList.contains("tema-escuro")) {
+      localStorage.setItem("tema", "escuro");
+    } else {
+      localStorage.setItem("tema", "claro");
     }
+  });
+
+  // Carregar a preferência salva ao iniciar
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "escuro") {
+    body.classList.add("tema-escuro");
+  }
 }
-
-
 
 // =========================================================
 // INICIALIZAÇÃO DE TODAS AS FUNÇÕES NO CARREGAMENTO
