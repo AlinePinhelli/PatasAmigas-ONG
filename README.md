@@ -54,17 +54,50 @@ A segunda fase do projeto transformou a estrutura semântica em uma interface vi
 
 ---
 
+## 💻 Entrega III: Interatividade e Dinamismo (JavaScript)
+
+Esta fase introduziu a lógica de programação para transformar a interface estática em um sistema web dinâmico, aplicando conceitos de manipulação do DOM e lógica de validação.
+
+### ⚙️ Funcionalidades Dinâmicas
+
+* **Menu Hambúrguer Funcional:** Implementação de JavaScript (Toggle Class) para abrir e fechar a navegação mobile ao clicar no ícone (`menu-toggle`).
+* **Lightbox / Modal:** Criação dinâmica de um componente modal/popup (usando `document.createElement`) para exibir a imagem de um animal em tela cheia ao clicar no card (`projetos.html`).
+* **Filtros de Busca e Tags:** Lógica de filtragem em tempo real (evento `input`) que esconde ou exibe cards de animais com base no texto digitado e nas tags selecionadas.
+* **Validação Avançada de Formulário:** Implementação de validação mais sofisticada no `cadastro.html`:
+    * Checagem de **Idade Mínima (18 anos)** para adoção/voluntariado.
+    * Máscara de Input Dinâmica para o campo **Telefone**, inserindo automaticamente os caracteres `()` e `-` enquanto o usuário digita.
+
+---
+
+## 🏁 Entrega IV: Versionamento, Acessibilidade e Qualidade Profissional
+
+A fase final do projeto focou em transformar o produto funcional em um projeto pronto para produção, seguindo normas de acessibilidade (WCAG 2.1) e boas práticas de Git/DevOps.
+
+### ♿ Acessibilidade e Conformidade (WCAG 2.1 Nível AA)
+
+* **Tema Escuro / Alto Contraste:** Adicionado um botão (💡) e lógica em JavaScript/CSS para alternar o **Modo Escuro Acessível**, garantindo contraste mínimo de 4.5:1 para texto normal.
+* **Suporte a Leitores de Tela:** Uso de atributos ARIA (`aria-label`, `aria-expanded`) e validação semântica para navegação por teclado completa.
+
+### 🔄 Versionamento e Gerenciamento de Código
+
+* **Estratégia de Branching (Simulação GitFlow):** Utilização de branches separadas para desenvolvimento (`feature/nome-da-feature`).
+* **Histórico de Commits Semântico:** Todos os commits seguem o padrão semântico (`feat:`, `fix:`, `style:`).
+* **Sistema de Releases:** O projeto será finalizado com a criação de uma tag **`v1.0.0`** (versionamento semântico) no GitHub.
+* **Otimização (Documentação):** Instruções para Minificação de código e Compressão de Imagens.
+
+---
+
 ## 🛠️ Como Visualizar o Projeto
 
-Para visualizar a estrutura da Entrega I, basta clonar este repositório e abrir os arquivos HTML diretamente no seu navegador.
+Para visualizar o projeto completo, basta clonar este repositório e abrir os arquivos HTML diretamente no seu navegador.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/AlinePinhelli/PatasAmigas-ONG
+    git clone [https://github.com/AlinePinhelli/PatasAmigas-ONG](https://github.com/AlinePinhelli/PatasAmigas-ONG)
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd patasAmigas-ONG
+    cd PatasAmigas-ONG
     ```
 3.  **Abra os arquivos:**
     * Clique duas vezes em `index.html` ou arraste-o para a aba do seu navegador (Chrome, Firefox, etc.).
@@ -74,6 +107,4 @@ Para visualizar a estrutura da Entrega I, basta clonar este repositório e abrir
 ## 🧑‍💻 Autor
 
 * **Aluno(a):** Aline dos Santos Pinhelli
-* **Tecnologia:** HTML5
-
----
+* **Tecnologia:** HTML5, CSS3, JavaScript
