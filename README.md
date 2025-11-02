@@ -60,6 +60,8 @@ Esta fase introduziu a lógica de programação para transformar a interface est
 
 ### ⚙️ Funcionalidades Dinâmicas
 
+* **Sistema Single Page Application (SPA):** Implementação de um roteador básico baseado em Hash (#) que carrega dinamicamente o conteúdo no elemento <main>, transformando o projeto em um SPA.
+* **Templates JavaScript:** O conteúdo das páginas (Início, Projetos e Cadastro) é renderizado dinamicamente a partir de objetos de template em JavaScript, substituindo a necessidade de múltiplos arquivos HTML estáticos.
 * **Menu Hambúrguer Funcional:** Implementação de JavaScript (Toggle Class) para abrir e fechar a navegação mobile ao clicar no ícone (`menu-toggle`).
 * **Lightbox / Modal:** Criação dinâmica de um componente modal/popup (usando `document.createElement`) para exibir a imagem de um animal em tela cheia ao clicar no card (`projetos.html`).
 * **Filtros de Busca e Tags:** Lógica de filtragem em tempo real (evento `input`) que esconde ou exibe cards de animais com base no texto digitado e nas tags selecionadas.
